@@ -1,7 +1,12 @@
-import '../styles/globals.css'
+import "../styles/globals.css";
+import WalletContextWrapper from "../components/WalletContextWrapper";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <WalletContextWrapper>
+      <Component {...pageProps} />
+    </WalletContextWrapper>
+  );
 }
 
-export default MyApp
+export default MyApp;
