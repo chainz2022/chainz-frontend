@@ -1,6 +1,8 @@
-import React from "react";
 import Head from "next/head";
 import Image from "next/image";
+import React from "react";
+import Avatar from "react-minecraft-skin-viewer";
+
 import Nav from "../components/Nav";
 import styles from "../styles/Profile.module.css";
 
@@ -35,11 +37,11 @@ export default function Profile() {
         <div className={styles.playerCard}>
           <span>Minecraft account</span>
           <div className={styles.image}>
-            <Image
-              src="/unknown-skin.webp"
-              alt="unknown skin"
-              width={256}
-              height={576}
+            <Avatar
+              src="https://crafatar.com/skins/a0baba3d574544a38d85e5034247e589"
+              rotate={true}
+              width={400}
+              height={550}
             />
           </div>
           <span>
