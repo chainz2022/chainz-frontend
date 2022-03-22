@@ -13,7 +13,7 @@ export default function Nav() {
   } = useContext(WalletContext);
 
   useEffect(() => {
-    connectWalletHandler();
+    connectWalletHandler(); //TODO(fix): This is triggering one more time after user cancels the wallet connection popup
 
     // listen for wallet changes
     window.ethereum.on("accountsChanged", walletChangedHandler);
@@ -42,8 +42,8 @@ export default function Nav() {
       </h2>
 
       <h2 className={styles.title}>
-        <Link href="/profile">
-          <a>Profile</a>
+        <Link href="/dashboard">
+          <a>Dashboard</a>
         </Link>
       </h2>
 
