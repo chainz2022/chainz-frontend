@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Nav from "../components/Nav";
-import styles from "../styles/Profile.module.css";
+import styles from "../styles/Dashboard.module.css";
 import { ethers } from "ethers";
 import { useContext } from "react";
 import WalletContext from "../contexts/WalletContext";
@@ -22,7 +22,7 @@ export default function Test() {
       <main className={styles.main}>
         <h1 className={styles.title}>ChainZ Network</h1>
 
-        <p className={styles.description}>Profile</p>
+        <p className={styles.description}>Dashboard</p>
 
         <Nav />
 
