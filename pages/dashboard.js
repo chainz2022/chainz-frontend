@@ -8,7 +8,7 @@ import { useContext } from "react";
 import WalletContext from "../contexts/WalletContext";
 
 export default function Dashboard() {
-  const { wallet, connectWalletHandler } = useContext(WalletContext);
+  const { wallet, player, connectWalletHandler } = useContext(WalletContext);
 
   return (
     <div className={styles.container}>
@@ -25,28 +25,28 @@ export default function Dashboard() {
 
         <Nav />
 
-        {wallet ? (
+        {player ? (
           <>
             <div className={styles.multiplierCard}>
               <div className={styles.card}>
                 <span>Multiplier</span>
-                <span>x0.10</span>
+                <span>{"x" + player.multiplier}</span>
               </div>
 
               <div className={styles.card}>
                 <span>Balance</span>
-                <span>1000 $BLOCK</span>
+                <span>{"x" + player.coins}</span>
               </div>
             </div>
 
             <div className={styles.playerCard}>
-              <span>Minecraft account</span>
+              <span>{player.username}</span>
               <div className={styles.image}>
                 <Avatar
-                  src="https://crafatar.com/skins/a0baba3d574544a38d85e5034247e589"
                   rotate={true}
                   width={400}
                   height={550}
+                  uuid={player.uuid}
                 />
               </div>
               <span>
@@ -62,6 +62,17 @@ export default function Dashboard() {
               </span>
             </div>
           </>
+        ) : wallet ? (
+          <div className={styles.playerCard}>
+            <span>Wallet not connected to minecraft account</span>
+            <div className={styles.image}>
+              <Avatar rotate={true} width={400} height={550} />
+            </div>
+            <span>
+              Connect to our minecraft server and type /verify to link your
+              account to your wallet
+            </span>
+          </div>
         ) : (
           <>
             <span>You need to be connected</span>
