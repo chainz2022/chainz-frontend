@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Marketplace.module.css";
+import styles from "../styles/marketplace.module.css";
 import Nav from "../components/Nav";
 import { useContext } from "react";
 import WalletContext from "../contexts/WalletContext";

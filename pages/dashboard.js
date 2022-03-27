@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import Avatar from "react-minecraft-skin-viewer";
 import Nav from "../components/Nav";
-import styles from "../styles/Dashboard.module.css";
+import styles from "../styles/dashboard.module.css";
 import { useContext } from "react";
 import WalletContext from "../contexts/WalletContext";
 
