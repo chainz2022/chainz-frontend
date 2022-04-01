@@ -48,7 +48,7 @@ export default function Verify() {
       }),
     };
     fetch(
-      "https://mechabrawlers:8443/player/verify-token",
+      "https://mechabrawlers.com:8443/player/verify-token",
       requestOptions
     ).then((response) => {
       console.log(response.json());

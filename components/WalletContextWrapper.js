@@ -51,7 +51,7 @@ function WalletContextWrapper({ children }) {
 
   const fetchPlayer = async (newWallet) => {
     const req = await fetch(
-      "https://mechabrawlers:8443/player?wallet=" + newWallet
+      "https://mechabrawlers.com:8443/player?wallet=" + newWallet
     );
 
     if (req.ok) {
