@@ -11,6 +11,17 @@
   align-items: center;
 }
 
+.nav{
+  display: flex;
+}
+
+.nav h2{
+  display: flex;
+  padding: 0 1rem;
+  width: 15rem;
+  justify-content: center;
+}
+
 .footer {
   display: flex;
   padding: 2rem 0;
@@ -40,45 +51,14 @@
   font-size: 1.5rem;
 }
 
-.playerCard{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border: 1px solid #ffffff;
-  padding: 2rem;
-  width: 600px;
-  height: 800px;
-  margin-top: 48px;
-  text-align: center;
-}
-
-.multiplierCard{
-  display: flex;
-  justify-content: center;
-  border: 1px solid #ffffff;
-  padding: 2rem;
-  width: 400px;
-  height: 100px;
-  margin-top: 48px;
-  text-align: center;
-}
-
-.companionsCard{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border: 1px solid #ffffff;
-  padding: 2rem;
-  width: 400px;
-  height: 200px;
-  margin-top: 48px;
-  text-align: center;
-}
-
 .card{
   display: flex;
   flex-direction: column;
-  padding: 4px;
+  justify-content: center;
+  border: 1px solid #ffffff;
+  padding: 2rem;
+  width: 400px;
+  height: 300px;
 }
 
 .image{
@@ -130,10 +110,5 @@
   touch-action: manipulation;
   vertical-align: baseline;
 }
-
-.gray{
-  color: gray;
-}
-
 @media (max-width: 600px) {
 }

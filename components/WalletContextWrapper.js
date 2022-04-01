@@ -1,11 +1,21 @@
 import WalletContext from "../contexts/WalletContext";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function WalletContextWrapper({ children }) {
   const [errorMessage, setErrorMessage] = useState(null);
   const [wallet, setWallet] = useState(null);
   const [player, setPlayer] = useState(null);
+
+  useEffect(() => {
+    connectWalletHandler();
+
+    if (window.ethereum) {
+      window.ethereum.on("accountsChanged", walletChangedHandler);
+
+      window.ethereum.on("chainChanged", chainChangedHandler);
+    }
+  }, []);
 
   const connectWalletHandler = () => {
     if (!wallet) {
@@ -19,7 +29,9 @@ function WalletContextWrapper({ children }) {
             setErrorMessage(error.message);
           });
       } else {
-        console.log("Need to install MetaMask");
+        alert(
+          "Please install MetaMask to connect your wallet and start playing!"
+        );
         setErrorMessage(
           "Please install MetaMask browser extension to interact"
         );
@@ -30,21 +42,24 @@ function WalletContextWrapper({ children }) {
     }
   };
 
-  // update wallet, will cause component re-render
   const walletChangedHandler = async (newWallet) => {
     setWallet(newWallet);
     if (newWallet) {
-      const req = await fetch(
-        "http://localhost:8080/player?wallet=" + newWallet
-      );
+      await fetchPlayer(newWallet);
+    }
+  };
 
-      if (req.ok) {
-        const data = await req.json();
+  const fetchPlayer = async (newWallet) => {
+    const req = await fetch(
+      "https://mechabrawlers:8443/player?wallet=" + newWallet
+    );
 
-        setPlayer(data);
-      } else {
-        setPlayer(null);
-      }
+    if (req.ok) {
+      const data = await req.json();
+
+      setPlayer(data);
+    } else {
+      setPlayer(null);
     }
   };
 
@@ -58,10 +73,9 @@ function WalletContextWrapper({ children }) {
       value={{
         errorMessage,
         wallet,
-        connectWalletHandler,
-        walletChangedHandler,
-        chainChangedHandler,
         player,
+        connectWalletHandler,
+        fetchPlayer,
       }}
     >
       {children}

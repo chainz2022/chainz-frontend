@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/home.module.css";
 import Nav from "../components/Nav";
 
 export default function Home() {
@@ -18,6 +18,13 @@ export default function Home() {
         <p className={styles.description}>Minecraft P2E</p>
 
         <Nav />
+        <p className={styles.description}>
+          1. Join minecraft server IP: 132.226.157.221
+        </p>
+        <p className={styles.description}>
+          2. /verify in-game to connect wallet to minecraft and start earning
+          coins
+        </p>
       </main>
 
       <footer className={styles.footer}>

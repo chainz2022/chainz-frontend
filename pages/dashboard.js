@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import Avatar from "react-minecraft-skin-viewer";
 import Nav from "../components/Nav";
-import styles from "../styles/Dashboard.module.css";
+import styles from "../styles/dashboard.module.css";
 import { useContext } from "react";
 import WalletContext from "../contexts/WalletContext";
 
@@ -40,7 +40,7 @@ export default function Dashboard() {
             </div>
 
             <div className={styles.playerCard}>
-              <span>{player.username}</span>
+              <span>{player.name}</span>
               <div className={styles.image}>
                 <Avatar
                   rotate={true}
@@ -50,8 +50,7 @@ export default function Dashboard() {
                 />
               </div>
               <span>
-                Connect to our minecraft server and type /verify to link your
-                account to your wallet
+                Join the server and start earning! IP: 132.226.157.221
               </span>
             </div>
 

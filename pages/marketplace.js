@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Marketplace.module.css";
+import styles from "../styles/marketplace.module.css";
 import Nav from "../components/Nav";
 import { useContext } from "react";
 import WalletContext from "../contexts/WalletContext";
@@ -58,8 +58,6 @@ export default function Marketplace() {
                 NFT companions
               </p>
 
-              <p className={styles.itemDescription}>$1000</p>
-
               <div className={styles.quantityContainer}>
                 <button
                   className={styles.button}
@@ -105,7 +103,7 @@ export default function Marketplace() {
                 type="button"
                 onClick={() => claimWhitelist()}
               >
-                {1000 * whitelistCount} $BLOCK
+                {1000 * whitelistCount} COINS
               </button>
             </div>
 
@@ -159,7 +157,7 @@ export default function Marketplace() {
                 type="button"
                 onClick={() => claimPlot()}
               >
-                {1000 * plotCount} $BLOCK
+                {1000 * plotCount} COINS
               </button>
             </div>
 
@@ -220,7 +218,7 @@ export default function Marketplace() {
                 type="button"
                 onClick={() => claimKit()}
               >
-                {1000 * kitCount} $BLOCK
+                {1000 * kitCount} COINS
               </button>
             </div>
           </>

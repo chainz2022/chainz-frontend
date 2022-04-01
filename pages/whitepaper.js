@@ -1,16 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
+import styles from "../styles/whitepaper.module.css";
 import Nav from "../components/Nav";
-import styles from "../styles/Dashboard.module.css";
-import { ethers } from "ethers";
-import { useContext } from "react";
-import WalletContext from "../contexts/WalletContext";
 
-export default function Test() {
-  const { errorMessage, wallet, connectWalletHandler } =
-    useContext(WalletContext);
-
+export default function Whitepaper() {
   return (
     <div className={styles.container}>
       <Head>
@@ -22,19 +16,19 @@ export default function Test() {
       <main className={styles.main}>
         <h1 className={styles.title}>ChainZ Network</h1>
 
-        <p className={styles.description}>Dashboard</p>
+        <p className={styles.description}>Whitepaper</p>
 
         <Nav />
 
-        <div>
-          <button onClick={connectWalletHandler}>
-            {wallet || "Connect wallet"}
-          </button>
-          <div>
-            <h3>Address: {wallet}</h3>
-          </div>
-          {errorMessage}
-        </div>
+        <p className={styles.description}>Soon</p>
+
+        <p className={styles.description}>
+          1. Join minecraft server IP: 132.226.157.221
+        </p>
+        <p className={styles.description}>
+          2. /verify in-game to connect wallet to minecraft and start earning
+          coins
+        </p>
       </main>
 
       <footer className={styles.footer}>

@@ -1,25 +1,11 @@
 import React from "react";
 import Link from "next/link";
 import styles from "../styles/Nav.module.css";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import WalletContext from "../contexts/WalletContext";
 
 export default function Nav() {
-  const {
-    wallet,
-    walletChangedHandler,
-    chainChangedHandler,
-    connectWalletHandler,
-  } = useContext(WalletContext);
-
-  useEffect(() => {
-    connectWalletHandler();
-
-    // listen for wallet changes
-    window.ethereum.on("accountsChanged", walletChangedHandler);
-
-    window.ethereum.on("chainChanged", chainChangedHandler);
-  }, []);
+  const { wallet, connectWalletHandler } = useContext(WalletContext);
 
   return (
     <div className={styles.nav}>
