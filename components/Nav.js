@@ -5,7 +5,7 @@ import { useContext } from "react";
 import WalletContext from "../contexts/WalletContext";
 
 export default function Nav() {
-  const { wallet, connectWalletHandler } = useContext(WalletContext);
+  const { shortWallet, connectWalletHandler } = useContext(WalletContext);
 
   return (
     <div className={styles.nav}>
@@ -35,7 +35,7 @@ export default function Nav() {
 
       <button onClick={connectWalletHandler}>
         <h2 className={styles.title}>
-          <a>{wallet || "Connect wallet"}</a>
+          <a>{shortWallet || "Connect wallet"}</a>
         </h2>
       </button>
     </div>

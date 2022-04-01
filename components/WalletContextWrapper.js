@@ -5,13 +5,14 @@ import { useState, useEffect } from "react";
 function WalletContextWrapper({ children }) {
   const [errorMessage, setErrorMessage] = useState(null);
   const [wallet, setWallet] = useState(null);
+  const [shortWallet, setShortWallet] = useState(null);
   const [player, setPlayer] = useState(null);
 
   useEffect(() => {
     connectWalletHandler();
 
     if (window.ethereum) {
-      window.ethereum.on("accountsChanged", walletChangedHandler);
+      window.ethereum.on("accountsChanged", connectWalletHandler);
 
       window.ethereum.on("chainChanged", chainChangedHandler);
     }
@@ -38,12 +39,14 @@ function WalletContextWrapper({ children }) {
       }
     } else {
       setWallet(null);
+      setShortWallet(null);
       setPlayer(null);
     }
   };
 
   const walletChangedHandler = async (newWallet) => {
     setWallet(newWallet);
+    setShortWallet(newWallet.slice(0, 6) + "..." + newWallet.slice(38, 42));
     if (newWallet) {
       await fetchPlayer(newWallet);
     }
@@ -73,6 +76,7 @@ function WalletContextWrapper({ children }) {
       value={{
         errorMessage,
         wallet,
+        shortWallet,
         player,
         connectWalletHandler,
         fetchPlayer,
