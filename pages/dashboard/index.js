@@ -42,23 +42,14 @@ export default function Dashboard() {
             <div className={styles.playerCard}>
               <span>{player.name}</span>
               <div className={styles.image}>
-                <Avatar
-                  rotate={true}
-                  width={400}
-                  height={550}
-                  uuid={player.uuid}
-                />
+                <Avatar rotate={true} width={400} height={550} uuid={player.uuid} />
               </div>
-              <span>
-                Join the server and start earning! IP: 132.226.157.221
-              </span>
+              <span>Join the server and start earning! IP: 132.226.157.221</span>
             </div>
 
             <div className={styles.companionsCard}>
               <span>Your companions</span>
-              <span className={styles.gray}>
-                You don&apos;t have any companions in your wallet
-              </span>
+              <span className={styles.gray}>You don&apos;t have any companions in your wallet</span>
             </div>
           </>
         ) : wallet ? (
@@ -68,8 +59,7 @@ export default function Dashboard() {
               <Avatar rotate={true} width={400} height={550} />
             </div>
             <span>
-              Connect to our minecraft server and type /verify to link your
-              account to your wallet
+              Connect to our minecraft server and type /verify to link your account to your wallet
             </span>
           </div>
         ) : (
@@ -82,20 +72,10 @@ export default function Dashboard() {
 
       <footer className={styles.footer}>
         <a href="https://discord.com" target="_blank" rel="noopener noreferrer">
-          <Image
-            src="/discord-white.svg"
-            alt="Discord"
-            width={32}
-            height={16}
-          />
+          <Image src="/discord-white.svg" alt="Discord" width={32} height={16} />
         </a>
         <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-          <Image
-            src="/twitter-white.svg"
-            alt="Twitter"
-            width={32}
-            height={16}
-          />
+          <Image src="/twitter-white.svg" alt="Twitter" width={32} height={16} />
         </a>
       </footer>
     </div>

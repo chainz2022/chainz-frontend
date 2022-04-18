@@ -1,16 +1,14 @@
 import Head from "next/head";
 import Image from "next/image";
 import React, { useState } from "react";
-import Nav from "../components/Nav";
-import styles from "../styles/verify.module.css";
+import Nav from "../components/Navbar";
 import { useContext } from "react";
 import WalletContext from "../contexts/WalletContext";
 import { useRouter } from "next/router";
 import { ethers } from "ethers";
 
 export default function Verify() {
-  const { wallet, connectWalletHandler, fetchPlayer } =
-    useContext(WalletContext);
+  const { wallet, connectWalletHandler, fetchPlayer } = useContext(WalletContext);
 
   const router = useRouter();
   const { token } = router.query;
@@ -19,8 +17,7 @@ export default function Verify() {
 
   const signMessage = async ({ message }) => {
     try {
-      if (!window.ethereum)
-        throw new Error("No crypto wallet found. Please install it.");
+      if (!window.ethereum) throw new Error("No crypto wallet found. Please install it.");
 
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
@@ -37,7 +34,7 @@ export default function Verify() {
     }
   };
 
-  const verifyTokenWithDb = async (sig) => {
+  const verifyTokenWithDb = async sig => {
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -47,10 +44,7 @@ export default function Verify() {
         signature: sig.signature,
       }),
     };
-    fetch(
-      "https://mechabrawlers.com:8443/player/verify-token",
-      requestOptions
-    ).then((response) => {
+    fetch("https://mechabrawlers.com:8443/player/verify-token", requestOptions).then(response => {
       console.log(response.json());
       setConnected(true);
       fetchPlayer(wallet);
@@ -68,27 +62,18 @@ export default function Verify() {
   };
 
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>Chainz App</title>
         <meta name="description" content="Chainz app" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>ChainZ Network</h1>
-
-        <p className={styles.description}>Verify</p>
-
-        <Nav />
-
+      <Layout>
         {wallet ? (
-          <div className={styles.verifyCard}>
+          <div className={""}>
             {connected ? (
-              <span>
-                Wallet connected! Re-login to the Chainz Minecraft to start
-                playing
-              </span>
+              <span>Wallet connected! Re-login to the Chainz Minecraft to start playing</span>
             ) : (
               <>
                 <span>Connect your wallet with your minecraft account</span>
@@ -103,26 +88,7 @@ export default function Verify() {
             <button onClick={connectWalletHandler}>Connect wallet</button>
           </>
         )}
-      </main>
-
-      <footer className={styles.footer}>
-        <a href="https://discord.com" target="_blank" rel="noopener noreferrer">
-          <Image
-            src="/discord-white.svg"
-            alt="Discord"
-            width={32}
-            height={16}
-          />
-        </a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-          <Image
-            src="/twitter-white.svg"
-            alt="Twitter"
-            width={32}
-            height={16}
-          />
-        </a>
-      </footer>
-    </div>
+      </Layout>
+    </>
   );
 }
