@@ -1,11 +1,12 @@
 import React from "react";
 import Link from "next/link";
-import { useContext } from "react";
-import WalletContext from "../contexts/WalletContext";
+import { useContext, useState, useEffect } from "react";
 import Image from "next/image";
+import WalletContext from "../contexts/WalletContext";
 
 export default function Navbar() {
   const { shortWallet, connectWalletHandler } = useContext(WalletContext);
+    const [showNavbarBackground, showShowNavbarBackground] = useState(false);
 
   return (
     <ul className="text-white text-[1.35rem] w-7/12 flex items-center justify-between ">
@@ -36,7 +37,7 @@ export default function Navbar() {
       </li>
 
       <li className="">
-        <Link href="/">
+        <Link href="/dashboard">
           <a>Dashboard</a>
         </Link>
       </li>

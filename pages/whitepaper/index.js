@@ -4,7 +4,7 @@ import Layout from "../../components/Layout";
 
 export default function Whitepaper() {
   return (
-    <>
+    <div className="h-full bg-black">
       <Head>
         <title>Chainz App</title>
         <meta name="description" content="Chainz app" />
@@ -14,6 +14,6 @@ export default function Whitepaper() {
       <Layout>
         <h3>Whitepaper</h3>
       </Layout>
-    </>
+    </div>
   );
 }

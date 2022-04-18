@@ -26,7 +26,7 @@ export default function Marketplace() {
   }
 
   return (
-    <>
+    <div className="h-full bg-black">
       <Head>
         <title>Chainz App</title>
         <meta name="description" content="Chainz app" />
@@ -183,6 +183,6 @@ export default function Marketplace() {
           </>
         )}
       </Layout>
-    </>
+    </div>
   );
 }

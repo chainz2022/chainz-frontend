@@ -2,6 +2,20 @@ module.exports = {
   content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      height: {
+        "5vh": "5vh",
+        "10vh": "10vh",
+        "15vh": "15vh",
+        "20vh": "20vh",
+        "25vh": "25vh",
+        "30vh": "30vh",
+        "50vh": "50vh",
+        "60vh": "60vh",
+        "70vh": "70vh",
+        "80vh": "80vh",
+        "90vh": "90vh",
+        "100vh": "100vh",
+      },
       inset: {
         "5vh": "5vh",
         "10vh": "10vh",
@@ -14,6 +28,7 @@ module.exports = {
         "70vh": "70vh",
         "80vh": "80vh",
         "90vh": "90vh",
+        "100vh": "100vh",
       },
       spacing: {
         "1/5": "20%",
