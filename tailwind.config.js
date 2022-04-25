@@ -15,6 +15,7 @@ module.exports = {
         "80vh": "80vh",
         "90vh": "90vh",
         "100vh": "100vh",
+        "200vh": "200vh",
       },
       inset: {
         "5vh": "5vh",
@@ -35,15 +36,36 @@ module.exports = {
         "2/5": "40%",
         "1/7": "14.28%",
         "1/8": "12.5%",
+        "2vh": "2vh",
+        "3vh": "3vh",
+        "4vh": "4vh",
+        "5vh": "5vh",
+        "7vh": "7vh",
+        "10vh": "10vh",
+        "12vh": "12vh",
+        "15vh": "15vh",
+        "17vh": "17vh",
+        "20vh": "20vh",
+        "25vh": "25vh",
       },
       boxShadow: {
         xl: "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
         "2xl": "0 25px 50px -12px rgb(0 0 0 / 0.35)",
+      },
+      fontFamily: {
+        sans: "Roboto, sans-serif",
+        minecraft: "Minecraft, Arial",
+        minecrafter: "Minecrafter, Arial",
       },
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    function ({ addVariant }) {
+      addVariant("child", "& > *");
+      addVariant("child-hover", "& > *:hover");
+    },
+  ],
 };

@@ -1,11 +1,10 @@
 import Head from "next/head";
-import Image from "next/image";
 import React, { useState } from "react";
-import Nav from "../components/Navbar";
 import { useContext } from "react";
 import WalletContext from "../contexts/WalletContext";
 import { useRouter } from "next/router";
 import { ethers } from "ethers";
+import Layout from "../components/Layout";
 
 export default function Verify() {
   const { wallet, connectWalletHandler, fetchPlayer } = useContext(WalletContext);

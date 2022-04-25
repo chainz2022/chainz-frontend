@@ -2,7 +2,110 @@
 @tailwind components;
 @tailwind utilities;
 
-
-#__next, body, html{
-    height: 100%;
+#__next,
+body,
+html {
+  height: 100%;
 }
+@layer base {
+  @font-face {
+    font-family: "Minecraft";
+    src: url("/fonts/Minecraft-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Minecrafter";
+    src: url("/fonts/Minecrafter-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+.specialButton {
+  @apply text-shadow text-center;
+  clip-path: polygon(8% 0, 110% 0, 92% 100%, -8% 100%);
+  background-image: linear-gradient(to right, #9d50bb 0%, #6e48aa 51%, #782498 100%);
+  background-size: 200% auto;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.specialButton:hover {
+  background-position: right center; /* change the direction of the change here */
+}
+/* .specialButton2 {
+  clip-path: polygon(8% 0, 110% 0, 92% 100%, -8% 100%);
+} */
+
+.text-shadow {
+  text-shadow: 0 0 2px rgba(0, 0, 0, 1);
+}
+.text-drop-shadow {
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 1));
+}
+
+.coin {
+  position: absolute;
+  filter: drop-shadow(0 0 10px rgba(241, 202, 3, 0.5));
+  animation: coin 7s ease-in-out infinite;
+}
+
+@keyframes coin {
+  0%,
+  100% {
+    transform: translateY(0.2rem);
+  }
+  50% {
+    transform: translateY(1.5rem);
+  }
+}
+
+.featureGradient {
+  background: -moz-radial-gradient(
+    circle at 50% 50%,
+    rgba(156, 54, 239, 0.35) 0%,
+    rgba(238, 130, 238, 0) 50%
+  );
+
+  /* safari 5.1+,chrome 10+ */
+  background: -webkit-radial-gradient(
+    circle at 50% 50%,
+    rgba(156, 54, 239, 0.35) 0%,
+    rgba(238, 130, 238, 0) 50%
+  );
+
+  /* opera 11.10+ */
+  background: -o-radial-gradient(
+    circle at 50% 50%,
+    rgba(156, 54, 239, 0.35) 0%,
+    rgba(238, 130, 238, 0) 50%
+  );
+
+  /* ie 10+ */
+  background: -ms-radial-gradient(
+    circle at 50% 50%,
+    rgba(156, 54, 239, 0.35) 0%,
+    rgba(238, 130, 238, 0) 50%
+  );
+
+  /* global 92%+ browsers support */
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(156, 54, 239, 0.35) 0%,
+    rgba(238, 130, 238, 0) 50%
+  );
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  left: -50%;
+  bottom: -50%;
+}
+
+/* .text {
+  font-size: 1rem;
+  fill: url(#gr-simple);
+} */

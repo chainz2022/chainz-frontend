@@ -4,18 +4,21 @@ import { useContext, useState, useEffect } from "react";
 import Image from "next/image";
 import WalletContext from "../contexts/WalletContext";
 
-export default function Navbar() {
+export default function Navbar({ centered }) {
   const { shortWallet, connectWalletHandler } = useContext(WalletContext);
-    const [showNavbarBackground, showShowNavbarBackground] = useState(false);
+  const [showNavbarBackground, showShowNavbarBackground] = useState(false);
 
   return (
-    <ul className="text-white text-[1.35rem] w-7/12 flex items-center justify-between ">
-      {/* <li className="">
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-      </li> */}
-
+    <ul className="z-50 text-white text-[1.2rem] w-10/12 flex items-center justify-between font-minecraft child-hover:drop-shadow-[0_0_2px_rgba(200,0,200,0.7)]">
+      {!centered && (
+        <li className="relative top-[1px] mr-20">
+          <Link href="/">
+            <a>
+              <Image src="/logo.png" alt="whitelist" width={96} height={96} />
+            </a>
+          </Link>
+        </li>
+      )}
       <li className="">
         <Link href="/marketplace">
           <a>Marketplace</a>
@@ -28,13 +31,15 @@ export default function Navbar() {
         </Link>
       </li>
 
-      <li className="relative top-[4px]">
-        <Link href="/">
-          <a>
-            <Image src="/logo.png" alt="whitelist" width={100} height={100} />
-          </a>
-        </Link>
-      </li>
+      {centered && (
+        <li className="relative top-[1px]">
+          <Link href="/">
+            <a>
+              <Image src="/logo.png" alt="whitelist" width={96} height={96} />
+            </a>
+          </Link>
+        </li>
+      )}
 
       <li className="">
         <Link href="/dashboard">

@@ -2,12 +2,15 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 import React from "react";
 
-const Layout = ({ children, className }) => {
+// @desc: This Main Layout component is 100vh tall.
+// Can be called with withNavbar and withFooter as false.
+// Use it with another container inside for better control. 
+const Layout = ({ children, withNavbar = true, withFooter = true }) => {
   return (
     <div className={`h-full flex items-center justify-between flex-col`}>
-      <Navbar />
-      <main className="z-10 bg-gray-400 p-4 rounded">{children}</main>
-      <Footer />
+      {withNavbar && <Navbar centered={true}/>}
+      <main className="z-10 w-full h-full">{children}</main>
+      {withFooter && <Footer />}
     </div>
   );
 };
