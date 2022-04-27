@@ -29,11 +29,11 @@ export default function Navbar({ centered, withFixedNavbar }) {
 
   return (
     <nav
-      className={`w-full z-50 fixed top-0 transition-all ease-in-out duration-300 ${
+      className={`w-full z-50 fixed top-0 transition-all ease-in-out duration-300${
         showNavbarBackground && "bg-gradient-to-b from-black/50 via-black/50 to-black/0"
       }`}
     >
-      <ul className="z-50 w-10/12 mx-auto flex items-center justify-between font-minecraft text-white text-[1.2rem] 2xl:text-[1.45rem] child-hover:drop-shadow-[0_0_2px_rgba(200,0,200,0.7)]">
+      <ul className="z-50 w-10/12 mx-auto flex items-center justify-between font-minecraft text-white text-[1.2rem] 2xl:text-[1.45rem] child-hover:drop-shadow-[0_0_2px_rgba(200,0,200,0.7)] ">
         {!centered && (
           <li className="relative top-[1px] mr-20">
             <Link href="/">

@@ -9,7 +9,7 @@ const Feature = ({ reverse}) => {
       }`}
     >
       {/* feature image */}
-      <div className="relative w-4/12">
+      <div className="relative">
         <span className="z-10 coin top-[10px] left-[25px]">
           <Image src="/bitcoin.webp" width="24" height="24" />
         </span>
@@ -19,13 +19,15 @@ const Feature = ({ reverse}) => {
         <span className="z-10 coin top-[60px] left-[15px]">
           <Image src="/bitcoin.webp" width="24" height="24" />
         </span>
-        <Image
-          className="z-10"
-          src="/adventurer2.png"
-          width="1037"
-          height="640"
-          layout="responsive"
-        />
+        <span className="">
+          <Image
+            className="z-10"
+            src="/adventurer2.png"
+            width="400"
+            height="250"
+          />
+        </span>
+
         <div className="featureGradient !left-[-60%]"></div>
       </div>
       {/* feature image */}

@@ -78,6 +78,7 @@ html {
 }
 
 .featureGradient {
+    position: absolute;
   background: -moz-radial-gradient(
     circle at 50% 50%,
     rgba(156, 54, 239, 0.35) 0%,
@@ -112,7 +113,7 @@ html {
     /* rgba(156, 54, 239, 0.10) 25%, */
     rgba(238, 130, 238, 0) 50%
   );
-  position: absolute;
+
   top: -50%;
   right: -50%;
   left: -50%;

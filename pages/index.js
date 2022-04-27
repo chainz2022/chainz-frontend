@@ -7,7 +7,7 @@ import Feature from "../components/Landing/Feature";
 
 export default function Home() {
   return (
-    <div className="h-full bg-[url('/background2.png')] bg-no-repeat bg-center bg-cover relative">
+    <div className="h-full bg-[url('/background2.png')] bg-no-repeat bg-center bg-cover relative overflow-x-hidden">
       <Head>
         <title>Chainz App</title>
         <meta name="description" content="Chainz app" />
