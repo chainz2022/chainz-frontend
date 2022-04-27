@@ -29,14 +29,27 @@ html {
 .specialButton {
   @apply text-shadow text-center;
   clip-path: polygon(8% 0, 110% 0, 92% 100%, -8% 100%);
-  background-image: linear-gradient(to right, #9d50bb 0%, #6e48aa 51%, #782498 100%);
-  background-size: 200% auto;
+  background-image: linear-gradient(to right, #9d50bb 0%, #6e48aa 45%, #6e48aa 55%, #9d50bb 100%);
+  background-position: 0 0;
+  background-repeat: repeat;
+  background-size: auto 100%;
   transition: 0.5s;
   cursor: pointer;
+  animation: animatedBackground 140s linear infinite;
 }
-.specialButton:hover {
-  background-position: right center; /* change the direction of the change here */
+@keyframes animatedBackground {
+  from {
+    background-position: 0 0;
+  }
+  /*use negative width if you want it to flow right to left else and positive for left to right*/
+  to {
+    background-position: -10000px 0;
+  }
 }
+/* .specialButton:hover {
+  background-position: right center;
+} */
+
 /* .specialButton2 {
   clip-path: polygon(8% 0, 110% 0, 92% 100%, -8% 100%);
 } */
@@ -96,6 +109,7 @@ html {
   background: radial-gradient(
     circle at 50% 50%,
     rgba(156, 54, 239, 0.35) 0%,
+    /* rgba(156, 54, 239, 0.10) 25%, */
     rgba(238, 130, 238, 0) 50%
   );
   position: absolute;

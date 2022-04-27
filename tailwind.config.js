@@ -2,8 +2,17 @@ module.exports = {
   content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      screens: {
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1536px",
+      },
       height: {
         "5vh": "5vh",
+        "6vh": "6vh",
+        "7vh": "7vh",
+        "8vh": "8vh",
+        "9vh": "9vh",
         "10vh": "10vh",
         "15vh": "15vh",
         "20vh": "20vh",
@@ -40,7 +49,10 @@ module.exports = {
         "3vh": "3vh",
         "4vh": "4vh",
         "5vh": "5vh",
+        "6vh": "6vh",
         "7vh": "7vh",
+        "8vh": "8vh",
+        "9vh": "9vh",
         "10vh": "10vh",
         "12vh": "12vh",
         "15vh": "15vh",
